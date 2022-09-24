@@ -1,19 +1,22 @@
 # react-svg-connector
 
-React component to draw svg connectors to connect any React components
+React component to draw svg connectors to connect any React components  
+Forked from [tudatn's react-svg-connector](https://www.npmjs.com/package/react-svg-connector): fixed connection position bug
 
 ## Installation
+
 ```
-npm install react-svg-connector
+npm install @devjaewoo/react-svg-connector
 
 or
 
-yarn add react-svg-connector
+yarn add @devjaewoo/react-svg-connector
 ```
 
 ## Usage
 
 Component props:
+
 - el1: first React component
 - el2: second React component
 - shape (`optional`): `'s' | 'narrow-s' | 'line'`
@@ -32,21 +35,23 @@ All svg path props are available. Please run a full example to see all available
 
 <img src="https://user-images.githubusercontent.com/26643781/109436187-40f83200-79d3-11eb-9d5d-93ed82d40791.gif" width="400">
 
-
 `narrow-s shape`
 
 <img src="https://user-images.githubusercontent.com/26643781/109394767-80dced80-78dd-11eb-8bd5-ff0337b79ebe.png" width="400">
 
 <img src="https://user-images.githubusercontent.com/26643781/109394769-833f4780-78dd-11eb-9555-de5c1bb039c8.png" width="400">
 
-
 <img src="https://user-images.githubusercontent.com/26643781/109436188-42c1f580-79d3-11eb-9a62-f85fcc2b2f6c.gif" width="600">
 
 ```ts
-import Connector from 'react-svg-connector';
+import Connector from "react-svg-connector";
 
 // if you want to use core connector components
-import { SConnector, LineConnector, NarrowSConnector } from 'react-svg-connector';
+import {
+  SConnector,
+  LineConnector,
+  NarrowSConnector,
+} from "react-svg-connector";
 
 const Wrapper = styled.div`
   position: relative;
@@ -99,3 +104,4 @@ function App() {
     </Wrapper>
   );
 }
+```
