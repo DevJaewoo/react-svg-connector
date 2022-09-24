@@ -1,5 +1,5 @@
 {
-  "name": "react-svg-connector",
+  "name": "@devjaewoo/react-svg-connector",
   "version": "1.1.0",
   "description": "React component to draw svg connectors between any React components",
   "main": "lib/index.js",
