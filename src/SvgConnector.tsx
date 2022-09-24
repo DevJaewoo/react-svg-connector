@@ -65,14 +65,30 @@ export default function SvgConnector(props: Props) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   function getCoords(el: HTMLElement) {
-    const parentEl = el.offsetParent;
+    const parentEl = (el.offsetParent as HTMLElement) || null;
     const box = el.getBoundingClientRect();
 
     return {
-      top: box.top + window.pageYOffset + (parentEl?.scrollTop || 0),
-      right: box.right + window.pageXOffset + (parentEl?.scrollLeft || 0),
-      bottom: box.bottom + window.pageYOffset + (parentEl?.scrollTop || 0),
-      left: box.left + window.pageXOffset + (parentEl?.scrollLeft || 0),
+      top:
+        box.top +
+        window.pageYOffset +
+        (parentEl?.scrollTop || 0) -
+        (parentEl?.offsetTop || 0),
+      right:
+        box.right +
+        window.pageXOffset +
+        (parentEl?.scrollLeft || 0) -
+        (parentEl?.offsetLeft || 0),
+      bottom:
+        box.bottom +
+        window.pageYOffset +
+        (parentEl?.scrollTop || 0) -
+        (parentEl?.offsetTop || 0),
+      left:
+        box.left +
+        window.pageXOffset +
+        (parentEl?.scrollLeft || 0) -
+        (parentEl?.offsetLeft || 0),
     };
   }
 
