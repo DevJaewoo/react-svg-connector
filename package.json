@@ -1,6 +1,6 @@
 {
   "name": "react-svg-connector",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "React component to draw svg connectors between any React components",
   "main": "lib/index.js",
   "directories": {
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tudatn/react-svg-connector.git"
+    "url": "git+https://github.com/DevJaewoo/react-svg-connector.git"
   },
   "keywords": [
     "React",
@@ -35,10 +35,10 @@
     "connection",
     "diagram"
   ],
-  "author": "Tu Dat Nguyen",
+  "author": "DevJaewoo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tudatn/react-svg-connector/issues"
+    "url": "https://github.com/DevJaewoo/react-svg-connector/issues"
   },
-  "homepage": "https://github.com/tudatn/react-svg-connector#readme"
+  "homepage": "https://github.com/DevJaewoo/react-svg-connector#readme"
 }
