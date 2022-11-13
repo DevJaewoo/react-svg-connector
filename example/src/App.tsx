@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import styled from "styled-components/macro";
-import Connector from "react-svg-connector";
+import Connector from "./Connector/SvgConnector";
 
 const Wrapper = styled.div`
   position: relative;

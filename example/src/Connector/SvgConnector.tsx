@@ -65,14 +65,17 @@ export default function SvgConnector(props: Props) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   function getCoords(el: HTMLElement) {
-    const parentEl = el.offsetParent;
-    const box = el.getBoundingClientRect();
+    const style = window.getComputedStyle(el);
+    const matrix = new DOMMatrixReadOnly(style.transform);
+
+    const x = el.offsetLeft + matrix.m41;
+    const y = el.offsetTop + matrix.m42;
 
     return {
-      top: box.top + window.pageYOffset + (parentEl?.scrollTop || 0),
-      right: box.right + window.pageXOffset + (parentEl?.scrollLeft || 0),
-      bottom: box.bottom + window.pageYOffset + (parentEl?.scrollTop || 0),
-      left: box.left + window.pageXOffset + (parentEl?.scrollLeft || 0),
+      top: y,
+      bottom: y + el.offsetHeight,
+      left: x,
+      right: x + el.offsetWidth,
     };
   }
 
@@ -172,7 +175,7 @@ export default function SvgConnector(props: Props) {
         top: 0,
         width: wrapperRef.current?.offsetParent?.scrollWidth || "100%",
         height: wrapperRef.current?.offsetParent?.scrollHeight || "100%",
-        zIndex: -1,
+        zIndex: 0,
       }}
     >
       {props.shape === "line" && (
