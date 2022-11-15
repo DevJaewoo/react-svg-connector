@@ -35,7 +35,7 @@ const Box2 = styled(Box)`
 
 function App() {
   const [activeDrags, setActiveDrags] = useState(0);
-  const [redraw, setRedraw] = useState(0);
+  const [, setRedraw] = useState(0);
 
   const refs = useRef<{ [key: string]: any }>({});
 
@@ -76,7 +76,7 @@ function App() {
         direction="r2l"
         roundCorner={false}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
         stem={30}
         minStep={100}
         strokeWidth={1}
@@ -90,7 +90,7 @@ function App() {
         stem={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box5"]?.current}
@@ -100,7 +100,7 @@ function App() {
         stem={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box7"]?.current}
@@ -110,7 +110,7 @@ function App() {
         stem={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
         minStep={10}
         strokeDasharray="5,10,5"
       />
@@ -124,7 +124,7 @@ function App() {
         stem={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box11"]?.current}
@@ -134,7 +134,7 @@ function App() {
         stem={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box13"]?.current}
@@ -144,7 +144,7 @@ function App() {
         stem={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box15"]?.current}
@@ -155,28 +155,28 @@ function App() {
         minStep={10}
         roundCorner={true}
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box17"]?.current}
         el2={refs.current["box18"]?.current}
         shape="s"
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box22"]?.current}
         el2={refs.current["box21"]?.current}
         shape="s"
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
       <Connector
         el1={refs.current["box19"]?.current}
         el2={refs.current["box20"]?.current}
         shape="line"
         endArrow={true}
-        startArrow={true}
+        startArrow={false}
       />
 
       <Draggable onStart={onStart} onStop={onStop} onDrag={onDrag}>

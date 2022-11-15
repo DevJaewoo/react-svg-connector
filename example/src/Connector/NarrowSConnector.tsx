@@ -48,8 +48,10 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
     end: props.endPoint,
   };
 
+  let reversed = false;
   if (props.direction === "l2r" || props.direction === "t2b") {
     // swap elements
+    reversed = true;
     coordinates = {
       start: props.endPoint,
       end: props.startPoint,
@@ -125,7 +127,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
           strokeWidth={props.strokeWidth || 3}
           fill="transparent"
         />
-        {props.endArrow && (
+        {((!reversed && props.endArrow) || (reversed && props.startArrow)) && (
           <Arrow
             tip={coordinates.end}
             size={cArrowSize}
@@ -133,7 +135,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
             stroke={props.stroke || "orange"}
           />
         )}
-        {props.startArrow && (
+        {((!reversed && props.startArrow) || (reversed && props.endArrow)) && (
           <Arrow
             tip={coordinates.start}
             size={cArrowSize}
@@ -189,7 +191,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
           strokeWidth={props.strokeWidth || 3}
           fill="transparent"
         />
-        {props.endArrow && (
+        {((!reversed && props.endArrow) || (reversed && props.startArrow)) && (
           <Arrow
             tip={coordinates.end}
             size={cArrowSize}
@@ -197,7 +199,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
             stroke={props.stroke || "orange"}
           />
         )}
-        {props.startArrow && (
+        {((!reversed && props.startArrow) || (reversed && props.endArrow)) && (
           <Arrow
             tip={coordinates.start}
             size={cArrowSize}
@@ -272,7 +274,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
           strokeWidth={props.strokeWidth || 3}
           fill="transparent"
         />
-        {props.endArrow && (
+        {((!reversed && props.endArrow) || (reversed && props.startArrow)) && (
           <Arrow
             tip={coordinates.end}
             size={cArrowSize}
@@ -280,7 +282,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
             stroke={props.stroke || "orange"}
           />
         )}
-        {props.startArrow && (
+        {((!reversed && props.startArrow) || (reversed && props.endArrow)) && (
           <Arrow
             tip={coordinates.start}
             size={cArrowSize}
@@ -355,7 +357,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
           strokeWidth={props.strokeWidth || 3}
           fill="transparent"
         />
-        {props.endArrow && (
+        {((!reversed && props.endArrow) || (reversed && props.startArrow)) && (
           <Arrow
             tip={coordinates.end}
             size={cArrowSize}
@@ -363,7 +365,7 @@ export default function NarrowSConnector(props: NarrowSConnectorProps) {
             stroke={props.stroke || "orange"}
           />
         )}
-        {props.startArrow && (
+        {((!reversed && props.startArrow) || (reversed && props.endArrow)) && (
           <Arrow
             tip={coordinates.start}
             size={cArrowSize}
